@@ -8,40 +8,102 @@
 .experience-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
 }
 
-.experience-timeline ol {
-  list-style-type: none;
+/* New Timeline Structure */
+.experience-section {
   position: relative;
-  padding-left: 20px;
 }
 
-.experience-timeline ol li {
+.experience-section h3 {
   margin-bottom: 30px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1a202c;
+}
+
+.timeline-container {
+  position: relative;
+  padding-left: 60px; /* Space for the timeline line and icons */
+}
+
+.timeline-content {
   position: relative;
 }
 
-.experience-timeline ol li:last-child {
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  left: -40px; /* Align with timeline line position */
+  top: 16px; /* Start at first icon center */
+  bottom: 16px; /* End at last icon center */
+  width: 2px;
+  background-color: #e2e8f0;
+  z-index: 0;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 20px;
+  padding-bottom: 0px;
+}
+
+.timeline-item:last-child {
   margin-bottom: 0;
 }
 
-.experience-timeline h3 {
-  margin-top: 10px;
+.timeline-icon {
+  position: absolute;
+  left: -55px; /* Position centered on the timeline line */
+  top: 0;
+  width: 32px;
+  height: 32px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; /* Ensure icons appear above the timeline line */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 3px solid #e2e8f0;
 }
 
-.experience-timeline ul {
+.timeline-icon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.timeline-details {
+  margin-left: 0;
+}
+
+/* Timeline content styling */
+.timeline-details h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.timeline-details p {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 4px 0;
+}
+
+.timeline-details ul {
   padding-left: 20px;
-  margin-top: 10px;
+  margin-top: 12px;
+  font-size: 0.875rem;
+  color: #6b7280;
 }
 
-.experience-timeline ul li {
-  margin-bottom: 5px;
-}
-
-/* Add some space between the sections */
-#experience-content > div > div {
-  margin-bottom: 40px;
+.timeline-details ul li {
+  margin-bottom: 4px;
+  line-height: 1.4;
 }
 
 /* Awards styling */
