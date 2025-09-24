@@ -501,13 +501,13 @@ async function build() {
     try {
         console.log('Starting static site build...');
 
-        const distDir = path.join(__dirname, 'dist');
+        const distDir = path.join(__dirname, 'docs');
         const assetsDir = path.join(__dirname, 'assets');
         const distAssetsDir = path.join(distDir, 'assets');
 
-        // 1. Clean and create the dist directory
+        // 1. Clean and create the docs directory
         await fs.emptyDir(distDir);
-        console.log('Cleaned dist directory.');
+        console.log('Cleaned docs directory.');
 
         // 2. Copy static assets and images
         await fs.copy(assetsDir, distAssetsDir);
@@ -605,9 +605,9 @@ async function build() {
         // 10. Serialize the DOM back to HTML and save it
         const finalHtml = dom.serialize();
         await fs.writeFile(path.join(distDir, 'index.html'), finalHtml);
-        console.log('Successfully created dist/index.html.');
+        console.log('Successfully created docs/index.html.');
 
-        console.log('\n✅ Build complete! Your static site is ready in the "dist" folder.');
+        console.log('\n✅ Build complete! Your static site is ready in the "docs" folder.');
 
     } catch (error) {
         console.error('Build failed:', error);
