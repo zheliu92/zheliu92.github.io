@@ -73,16 +73,22 @@ async function generateNewsHtml(assetsDir) {
     const markdownContent = await fs.readFile(newsFilePath, 'utf-8');
     const newsItems = parseNewsMarkdown(markdownContent);
 
-    let newsHtml = '<div class="news-container">';
-    newsItems.forEach(item => {
-        newsHtml += `
-            <div class="news-item">
-                <span class="news-date">${item.date}</span>
-                <span class="news-content">${item.content}</span>
+    const newsItemsHTML = newsItems.map(item => {
+        return `
+            <div data-v-750433cc="" class="list-group-item" style="text-align: left; border: 0px; padding: 0.25vw 0px 0.25vw 0vw;">
+                <strong data-v-750433cc="">${item.date}</strong>: 
+                <span data-v-750433cc="">${item.content}</span>
             </div>
         `;
-    });
-    newsHtml += '</div>';
+    }).join('');
+
+    const newsHtml = `
+        <div class="card-body" style="border: 0px; padding: 5px 5px 5px 5vw;">
+            <div class="list-group">
+                ${newsItemsHTML}
+            </div>
+        </div>
+    `;
     
     return newsHtml;
 }
