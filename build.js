@@ -550,13 +550,13 @@ async function build() {
             console.warn('Warning: #about-content container not found in index.html.');
         }
 
-        const newsContainer = document.getElementById('dynamic-news');
+        const newsContainer = document.getElementById('news-content');
         if (newsContainer) {
             const newsHtml = await generateNewsHtml(assetsDir);
             newsContainer.innerHTML = newsHtml;
             console.log('Successfully injected news content.');
         } else {
-            console.warn('Warning: #dynamic-news container not found in index.html.');
+            console.warn('Warning: #news-content container not found in index.html.');
         }
 
         // 6. Process Publications
