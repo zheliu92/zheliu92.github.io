@@ -1,0 +1,83 @@
+/* Experience section styling */
+.experience-timeline {
+  padding: 20px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.experience-timeline ol {
+  list-style-type: none;
+  position: relative;
+  padding-left: 20px;
+}
+
+.experience-timeline ol li {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.experience-timeline ol li:last-child {
+  margin-bottom: 0;
+}
+
+.experience-timeline h3 {
+  margin-top: 10px;
+}
+
+.experience-timeline ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.experience-timeline ul li {
+  margin-bottom: 5px;
+}
+
+/* Add some space between the sections */
+#experience-content > div > div {
+  margin-bottom: 40px;
+}
+
+/* Awards styling */
+.experience-timeline .award-item {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.experience-timeline .award-icon {
+  flex-shrink: 0;
+  margin-right: 15px;
+}
+
+/* Fix link styles */
+.experience-timeline a {
+  color: #2196F3;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.experience-timeline a:hover {
+  color: #0D47A1;
+  text-decoration: underline;
+}
+
+/* Button styling */
+.experience-timeline .button {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.experience-timeline .button:hover {
+  background-color: #45a049;
+}
