@@ -3883,15 +3883,38 @@ h4.year-header {
     border-color: #4A91BA;
 }
 
-/* Award styling */
+/* Award styling - displayed under the preview/abbr in the left column */
 .publication-award {
-    color: #4CA1AF;
-    font-style: italic;
-    margin-top: 0.3em;
+	display: block;
+	background: linear-gradient(180deg, #fff9e6 0%, #fff3cc 100%); /* pale gold */
+	color: #6a4e00; /* dark gold/brown text */
+	padding: 0.4em 0.5em;
+	margin-top: 0.6em;
+	border-radius: 4px;
+	font-size: 0.85em;
+	font-weight: 600;
+	text-align: center;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+	width: 100%;
+	box-sizing: border-box;
 }
 
 .publication-award i {
-    margin-right: 0.3em;
+	margin-right: 0.4em;
+}
+
+/* Make sure the left column stacks the image, abbr, and award with matching widths */
+.publication-card .col-md-3.image-col {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+	align-items: stretch;
+}
+
+.publication-card .col-md-3.image-col .publication-abbr,
+.publication-card .col-md-3.image-col .publication-award {
+	width: 100%;
+	text-align: center;
 }
 
 /* Abbreviation badge styling */
