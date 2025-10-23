@@ -164,7 +164,8 @@ function generatePublicationCard(pub) {
     if (pub.video) links.push(`<a href="${pub.video}" class="button small" target="_blank">Video</a>`);
     if (pub.code) links.push(`<a href="${pub.code}" class="button small" target="_blank">Code</a>`);
 
-    const award = pub.award ? `<p class="publication-award"><i class="fa-solid fa-award"></i> ${pub.award}</p>` : '';
+    // award will be displayed under the preview/abbr in the left column
+    const award = pub.award ? `<div class="publication-award"><i class="fa-solid fa-award"></i> ${pub.award}</div>` : '';
     const abbr = pub.abbr ? `<span class="publication-abbr">${pub.abbr}</span>` : '';
     const selectedClass = pub.selected === 'true' ? ' publication-selected' : '';
 
@@ -175,13 +176,13 @@ function generatePublicationCard(pub) {
                     <div class="col-md-3 image-col">
                         <img src="${imageSrc}" alt="Publication Image" class="publication-img" onerror="this.src='assets/file/images/pic01.jpg'">
                         ${abbr}
+                        ${award}
                     </div>
                     <div class="col-md-9">
                         <div class="card-content">
                             <p class="publication-title">${title}</p>
                             <p class="publication-authors">${authors}</p>
                             <p class="publication-venue"><em>${venue}, ${year}</em></p>
-                            ${award}
                             <div class="publication-links">
                                 ${links.join(' ')}
                             </div>
