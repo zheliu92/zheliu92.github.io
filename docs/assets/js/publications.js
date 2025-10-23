@@ -136,7 +136,8 @@ class PublicationManager {
         if (pub.code) links.push(`<a href="${pub.code}" class="btn btn-outline-secondary" target="_blank">Code</a>`);
 
         // Generate award if exists
-        const award = pub.award ? `<p class="publication-award"><i class="fa-solid fa-award"></i> ${pub.award}</p>` : '';
+    // Render award without icon; add a bold label
+    const award = pub.award ? `<p class="publication-award"><strong>Award:</strong> ${pub.award}</p>` : '';
         
         // Generate abbreviation badge if exists
         const abbr = pub.abbr ? `<span class="publication-abbr">${pub.abbr}</span>` : '';

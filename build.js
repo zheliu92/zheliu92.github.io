@@ -165,7 +165,8 @@ function generatePublicationCard(pub) {
     if (pub.code) links.push(`<a href="${pub.code}" class="button small" target="_blank">Code</a>`);
 
     // award will be displayed under the preview/abbr in the left column
-    const award = pub.award ? `<div class="publication-award"><i class="fa-solid fa-award"></i> ${pub.award}</div>` : '';
+    // Show award text without an icon; prefix with a bold label for clarity
+    const award = pub.award ? `<div class="publication-award">${pub.award}</div>` : '';
     const abbr = pub.abbr ? `<span class="publication-abbr">${pub.abbr}</span>` : '';
     const selectedClass = pub.selected === 'true' ? ' publication-selected' : '';
 
