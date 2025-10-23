@@ -3903,18 +3903,36 @@ h4.year-header {
 	margin-right: 0.4em;
 }
 
-/* Make sure the left column stacks the image, abbr, and award with matching widths */
+/* Make sure the left column stacks the image, abbr, and award with matching widths.
+   Remove the general gap so the abbreviation and award can be flush. */
 .publication-card .col-md-3.image-col {
 	display: flex;
 	flex-direction: column;
-	gap: 0.5em;
+	gap: 0; /* use controlled spacing for the image only */
 	align-items: stretch;
+}
+
+.publication-card .col-md-3.image-col .publication-img {
+	margin-bottom: 0.5em; /* space between image and abbr */
 }
 
 .publication-card .col-md-3.image-col .publication-abbr,
 .publication-card .col-md-3.image-col .publication-award {
 	width: 100%;
 	text-align: center;
+}
+
+/* Make the abbreviation and award boxes sit flush with no gap between them */
+.publication-card .col-md-3.image-col .publication-abbr {
+	margin-bottom: 0; /* ensure no gap below abbr */
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.publication-card .col-md-3.image-col .publication-award {
+	margin-top: 0; /* remove top margin so it connects to abbr */
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
 }
 
 /* Abbreviation badge styling */
