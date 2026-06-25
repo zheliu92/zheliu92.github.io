@@ -3834,8 +3834,8 @@ h4.year-header {
 }
 
 .card-content {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     padding: 0 0 0 1em;
     width: 100%;
 }
@@ -3869,7 +3869,8 @@ h4.year-header {
     flex-wrap: wrap;
     align-items: flex-end;
     gap: 0.3em 0.5em;
-    margin-top: auto;
+    grid-row: 3;
+    margin-top: 0;
     padding-top: 0.5em;
 }
 
@@ -3919,15 +3920,23 @@ h4.year-header {
 /* Make sure the left column stacks the image, abbr, and award with matching widths.
    Remove the general gap so the abbreviation and award can be flush. */
 .publication-card .col-md-3.image-col {
-	display: flex;
-	flex-direction: column;
-	gap: 0; /* use controlled spacing for the image only */
+	display: grid;
+	grid-template-rows: auto 1fr auto;
 	align-items: stretch;
 	padding-bottom: 0;
 }
 
+.publication-media {
+	grid-row: 1;
+}
+
+.publication-badges {
+	grid-row: 3;
+}
+
 .publication-card .col-md-3.image-col .publication-img {
-	margin-bottom: auto; /* push abbr/award stack to align with the action row */
+	display: block;
+	margin-bottom: 0;
 }
 
 .publication-card .col-md-3.image-col .publication-abbr,

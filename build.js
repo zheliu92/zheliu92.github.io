@@ -188,15 +188,21 @@ function generatePublicationCard(pub) {
             <div class="card-body">
                 <div class="row no-gutters">
                     <div class="col-md-3 image-col">
-                        <img src="${imageSrc}" alt="Publication Image" class="publication-img" onerror="this.src='assets/file/images/pic01.jpg'">
-                        ${abbr}
-                        ${award}
+                        <div class="publication-media">
+                            <img src="${imageSrc}" alt="Publication Image" class="publication-img" onerror="this.src='assets/file/images/pic01.jpg'">
+                        </div>
+                        <div class="publication-badges">
+                            ${abbr}
+                            ${award}
+                        </div>
                     </div>
                     <div class="col-md-9">
                         <div class="card-content">
-                            <p class="publication-title">${title}</p>
-                            <p class="publication-authors">${authors}</p>
-                            <p class="publication-venue"><em>${venue}, ${year}</em></p>
+                            <div class="publication-main">
+                                <p class="publication-title">${title}</p>
+                                <p class="publication-authors">${authors}</p>
+                                <p class="publication-venue"><em>${venue}, ${year}</em></p>
+                            </div>
                             <div class="publication-links">
                                 ${links.join(' ')}
                             </div>

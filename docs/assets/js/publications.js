@@ -136,8 +136,7 @@ class PublicationManager {
         if (pub.code) links.push(`<a href="${pub.code}" class="btn btn-outline-secondary" target="_blank">Code</a>`);
 
         // Generate award if exists
-    // Render award without icon; add a bold label
-    const award = pub.award ? `<p class="publication-award"><strong>Award:</strong> ${pub.award}</p>` : '';
+        const award = pub.award ? `<p class="publication-award"><strong>Award:</strong> ${pub.award}</p>` : '';
         
         // Generate abbreviation badge if exists
         const abbr = pub.abbr ? `<span class="publication-abbr">${pub.abbr}</span>` : '';
@@ -150,15 +149,21 @@ class PublicationManager {
                 <div class="card-body">
                     <div class="row no-gutters">
                         <div class="col-md-3 image-col">
-                            <img src="${imageSrc}" alt="Publication Image" class="publication-img" onerror="this.src='assets/file/images/pic01.jpg'">
-                            ${abbr}
+                            <div class="publication-media">
+                                <img src="${imageSrc}" alt="Publication Image" class="publication-img" onerror="this.src='assets/file/images/pic01.jpg'">
+                            </div>
+                            <div class="publication-badges">
+                                ${abbr}
+                                ${award}
+                            </div>
                         </div>
                         <div class="col-md-9">
                             <div class="card-content">
-                                <p class="publication-title">${title}</p>
-                                <p class="publication-authors">${authors}</p>
-                                <p class="publication-venue">${venue}</p>
-                                ${award}
+                                <div class="publication-main">
+                                    <p class="publication-title">${title}</p>
+                                    <p class="publication-authors">${authors}</p>
+                                    <p class="publication-venue">${venue}</p>
+                                </div>
                                 <div class="publication-links">
                                     ${links.join('')}
                                 </div>
