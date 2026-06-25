@@ -426,6 +426,24 @@ function formatDateRange(startDate, endDate) {
     return `${start} – ${end}`;
 }
 
+function getSortDate(item) {
+    const dateValue = item.date_start || item.date || '';
+    const academicDate = String(dateValue).trim().match(/^(\d{4})\s+(Jan|Spring|Summer|Fall)$/i);
+
+    if (academicDate) {
+        const termMonths = {
+            jan: 0,
+            spring: 0,
+            summer: 5,
+            fall: 8
+        };
+        return new Date(Number(academicDate[1]), termMonths[academicDate[2].toLowerCase()], 1);
+    }
+
+    const parsedDate = new Date(dateValue);
+    return Number.isNaN(parsedDate.getTime()) ? new Date(0) : parsedDate;
+}
+
 function parseMarkdownLinks(text) {
     if (!text) return '';
     return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
@@ -497,8 +515,8 @@ function renderSection(title, items, type) {
     if (!items || items.length === 0) return '';
     const timelineItems = items
         .sort((a, b) => {
-            const dateA = new Date(a.date_start || a.date);
-            const dateB = new Date(b.date_start || b.date);
+            const dateA = getSortDate(a);
+            const dateB = getSortDate(b);
             return dateB - dateA;
         })
         .map(item => renderTimelineItem(item, type))
