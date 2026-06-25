@@ -3865,13 +3865,20 @@ h4.year-header {
 }
 
 .publication-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 0.3em 0.5em;
     margin-top: auto;
     padding-top: 0.5em;
 }
 
+.publication-links .btn,
+.publication-links .button {
+    margin: 0;
+}
+
 .publication-links .btn {
-    margin-right: 0.5em;
-    margin-bottom: 0.3em;
     padding: 0.3em 0.8em;
     font-size: 0.85em;
     border: 1px solid #5FA8D3;
@@ -3916,6 +3923,7 @@ h4.year-header {
 	flex-direction: column;
 	gap: 0; /* use controlled spacing for the image only */
 	align-items: stretch;
+	padding-bottom: 0;
 }
 
 .publication-card .col-md-3.image-col .publication-img {
