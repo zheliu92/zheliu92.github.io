@@ -94,6 +94,10 @@
   margin: 4px 0;
 }
 
+.timeline-details .experience-date {
+  font-style: italic;
+}
+
 .timeline-details ul {
   padding-left: 20px;
   margin-top: 12px;

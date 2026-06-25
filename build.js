@@ -188,21 +188,15 @@ function generatePublicationCard(pub) {
             <div class="card-body">
                 <div class="row no-gutters">
                     <div class="col-md-3 image-col">
-                        <div class="publication-media">
-                            <img src="${imageSrc}" alt="Publication Image" class="publication-img" onerror="this.src='assets/file/images/pic01.jpg'">
-                        </div>
-                        <div class="publication-badges">
-                            ${abbr}
-                            ${award}
-                        </div>
+                        <img src="${imageSrc}" alt="Publication Image" class="publication-img" onerror="this.src='assets/file/images/pic01.jpg'">
+                        ${abbr}
+                        ${award}
                     </div>
                     <div class="col-md-9">
                         <div class="card-content">
-                            <div class="publication-main">
-                                <p class="publication-title">${title}</p>
-                                <p class="publication-authors">${authors}</p>
-                                <p class="publication-venue"><em>${venue}, ${year}</em></p>
-                            </div>
+                            <p class="publication-title">${title}</p>
+                            <p class="publication-authors">${authors}</p>
+                            <p class="publication-venue"><em>${venue}, ${year}</em></p>
                             <div class="publication-links">
                                 ${links.join(' ')}
                             </div>
@@ -508,7 +502,7 @@ function renderTimelineItem(item, type) {
             <div class="timeline-details">
                 <h4>${parseMarkdownLinks(title)}</h4>
                 <p>${organization}</p>
-                <p>${dateRange}</p>
+                <p class="experience-date">${dateRange}</p>
                 <div>
                     ${summaryContent}
                 </div>

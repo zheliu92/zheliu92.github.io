@@ -3776,6 +3776,7 @@ h3.category-title {
 h4.year-header {
     font-size: 1.2em;
     font-weight: bold;
+    font-style: italic;
     text-align: left;
     background: white;
     padding: 0.5em 0;
@@ -4142,6 +4143,7 @@ textarea:focus {
 
 #news-content .list-group-item strong {
     color: var(--text-primary) !important;
+    font-style: italic;
 }
 
 #news-content .list-group-item a {

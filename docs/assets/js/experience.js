@@ -220,7 +220,7 @@ class ExperienceLoader {
                 </span>
                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white">${this.parseMarkdownLinks(title)}</h3>
                 <p class="text-sm font-normal text-gray-500 dark:text-gray-300">${organization}</p>
-                <p class="text-sm font-normal text-gray-500 dark:text-gray-300">${dateRange}</p>
+                <p class="experience-date text-sm font-normal text-gray-500 dark:text-gray-300">${dateRange}</p>
                 <div class="mt-2 mb-4 text-base font-normal text-gray-500 dark:text-gray-300 prose max-w-none prose-slate dark:prose-invert">
                     ${summaryContent}
                 </div>
