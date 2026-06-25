@@ -4088,12 +4088,20 @@ textarea:focus {
 }
 
 /* News Section */
-#news-content .card-body {
+#news-content {
+    margin-top: 0.35em;
+}
+
+#news-content .news-card-body {
     background: var(--secondary-bg) !important;
+    border: 1px solid rgba(147, 181, 198, 0.45);
+    border-radius: 8px;
+    padding: 1.05em 1.25em 1em;
 }
 
 #news-content .list-group-item {
     background: transparent !important;
+    line-height: 1.55;
 }
 
 #news-content .list-group-item strong {
@@ -4111,7 +4119,9 @@ textarea:focus {
 #news-content .news-actions {
     display: flex;
     justify-content: flex-end;
-    margin-top: 0.85em;
+    margin-top: 0.95em;
+    padding-top: 0.8em;
+    border-top: 1px solid rgba(147, 181, 198, 0.55);
 }
 
 #news-content .news-learn-more {
@@ -4120,6 +4130,20 @@ textarea:focus {
     height: 2.5em;
     line-height: 2.5em;
     padding: 0 1.15em;
+}
+
+@media screen and (max-width: 736px) {
+    #news-content .news-card-body {
+        padding: 0.9em 1em;
+    }
+
+    #news-content .news-actions {
+        justify-content: stretch;
+    }
+
+    #news-content .news-learn-more {
+        width: 100%;
+    }
 }
 
 /* General Border and Divider Updates */

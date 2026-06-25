@@ -29,7 +29,7 @@ work:
     date_start: 2026-01-20
     date_end: 2026-05-31
     summary:
-      - 
+      - Led an end-to-end research project investigating the evaluation of interactive-widget-augmented human–AI collaboration and prepared the resulting manuscript for submission.
   - position: HCI Research Engineer
     company_name: HUAWEI Technologies Canada
     date_start: 2019-05-01
@@ -68,6 +68,12 @@ work:
       - Managed an observational study with 30 students with autism and interviews with 7 teachers and caregivers to test the impact on children's engagement, social behaviour and motor skills.
 
 awards:
+  - title: NSERC Canada Graduate Research Scholarship – Doctoral (CGRS-D)
+    url: https://nserc-crsng.canada.ca/en/funding-opportunity/canada-graduate-research-scholarship-doctoral-program
+    date: '2026-05-01'
+    awarder: Natural Sciences and Engineering Research Council of Canada
+    summary: 
+      - One of Canada’s most prestigious national scholarships for doctoral scholars
   - title: Four Year Doctoral Fellowship (4YF)
     url: https://www.grad.ubc.ca/awards/four-year-doctoral-fellowship-4yf
     date: '2025-01-01'
@@ -91,10 +97,34 @@ talks:
       - A great talk
 
 teaching:
+  - role: Trainee
+    activity: UBC Computer Science Teaching Development Program (Year 2)
+    location: UBC
+    date: 2025 Fall
+  - role: Teaching Assistant
+    activity: CPSC 436N - Natural Language Processing
+    location: UBC
+    date: 2025 Fall
+  - role: Trainee
+    activity: Graduate/Post-doc Students Teaching in Higher Education Conference, [Certificate](assets/file/material/Liu_ITeach_CERTIFICATE_GPSTHE_Conference.pdf)
+    location: ITeach in Higher Education
+    date: 2025 Summer  
+  - role: Teaching Assistant
+    activity: CPSC 444 - Advanced Methods for Human Computer Interaction
+    location: UBC
+    date: 2025 Spring
+  - role: Trainee
+    activity: [Instructional Skills Workshops for Graduate Students](https://ctlt.ubc.ca/programs/graduate-student-ta-programs/instructional-skills-workshops/)
+    location: UBC
+    date: 2025 Jan
+  - role: Trainee
+    activity: UBC Computer Science Teaching Development Program (Year 1), [Certificate](assets/file/material/Teaching_Development_Certificate.pdf)
+    location: UBC
+    date: 2024 Fall
   - role: Teaching Assistant
     activity: CPSC 344 - Introduction to Human Computer Interaction Methods
     location: UBC
-    date: 2022 Fall
+    date: 2023 Fall
   - role: Teaching Assistant
     activity: CPSC 344 - Introduction to Human Computer Interaction Methods
     location: UBC
@@ -102,29 +132,13 @@ teaching:
   - role: Teaching Assistant
     activity: CPSC 344 - Introduction to Human Computer Interaction Methods
     location: UBC
-    date: 2023 Fall
-  - role: Trainee
-    activity: UBC Computer Science Teaching Development Program (Year 1), [Certificate](assets/file/material/Teaching_Development_Certificate.pdf)
-    location: UBC
-    date: 2024 Fall
-  - role: Trainee
-    activity: [Instructional Skills Workshops for Graduate Students](https://ctlt.ubc.ca/programs/graduate-student-ta-programs/instructional-skills-workshops/)
-    location: UBC
-    date: 2025 Jan
-  - role: Teaching Assistant
-    activity: CPSC 444 - Advanced Methods for Human Computer Interaction
-    location: UBC
-    date: 2025 Spring
-  - role: Trainee
-    activity: Graduate/Post-doc Students Teaching in Higher Education Conference, [Certificate](assets/file/material/Liu_ITeach_CERTIFICATE_GPSTHE_Conference.pdf)
-    location: ITeach in Higher Education
-    date: 2025 Summer
-  - role: Teaching Assistant
-    activity: CPSC 436N - Natural Language Processing
-    location: UBC
-    date: 2025 Fall
-  - role: Trainee
-    activity: UBC Computer Science Teaching Development Program (Year 2)
-    location: UBC
-    date: 2025 Fall
+    date: 2022 Fall
+
+
+
+
+
+
+
+
   

@@ -95,7 +95,7 @@ async function generateNewsHtml(assetsDir) {
     ` : '';
 
     const newsHtml = `
-        <div class="card-body news-card-body" style="border: 0px; padding: 5px 5px 5px 5vw;">
+        <div class="card-body news-card-body">
             <div class="list-group">
                 ${newsItemsHTML}
             </div>
