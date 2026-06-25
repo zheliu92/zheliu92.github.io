@@ -136,7 +136,7 @@ function renderNewsItems(newsItems) {
 
     const learnMoreButton = newsItems.length > INITIAL_NEWS_COUNT ? `
         <div class="news-actions">
-            <button type="button" class="button small news-learn-more" onclick="this.closest('.news-card-body').querySelectorAll('.news-extra-item').forEach(function(item) { item.hidden = false; }); this.remove();">
+            <button type="button" class="button small news-learn-more" onclick="this.closest('.news-card-body').querySelectorAll('.news-extra-item').forEach(function(item) { item.hidden = false; }); this.closest('.news-actions').remove();">
                 Learn more
             </button>
         </div>
