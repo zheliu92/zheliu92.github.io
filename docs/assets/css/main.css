@@ -4108,6 +4108,20 @@ textarea:focus {
     color: var(--btn-primary) !important;
 }
 
+#news-content .news-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.85em;
+}
+
+#news-content .news-learn-more {
+    margin: 0;
+    min-width: 0;
+    height: 2.5em;
+    line-height: 2.5em;
+    padding: 0 1.15em;
+}
+
 /* General Border and Divider Updates */
 hr {
     border-color: var(--border-color) !important;

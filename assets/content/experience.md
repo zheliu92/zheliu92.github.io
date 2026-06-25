@@ -24,6 +24,12 @@ education:
       - Relevant Courses: Programming, Data Structures, Algorithm Analysis, Databases, User-Centered Design.
 
 work:
+  - position: Research Intern
+    company_name: Microsoft Research Aisa
+    date_start: 2026-01-20
+    date_end: 2026-05-31
+    summary:
+      - 
   - position: HCI Research Engineer
     company_name: HUAWEI Technologies Canada
     date_start: 2019-05-01

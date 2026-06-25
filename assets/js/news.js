@@ -3,6 +3,8 @@
  * Loads news items from markdown file and formats them according to the specified style
  */
 
+const INITIAL_NEWS_COUNT = 5;
+
 /**
  * Load and display news from embedded data or markdown file
  */
@@ -118,24 +120,34 @@ function renderNewsItems(newsItems) {
         return;
     }
     
-    const newsItemsHTML = newsItems.map(item => {
+    const newsItemsHTML = newsItems.map((item, index) => {
         // If content is already formatted (from embedded data), use as-is
         // Otherwise, apply formatting (from markdown parsing)
         const content = item.content.includes('<a href') ? item.content : formatNewsContent(item.content);
+        const extraItemAttrs = index >= INITIAL_NEWS_COUNT ? ' class="list-group-item news-extra-item" hidden' : ' class="list-group-item"';
         
         return `
-            <div data-v-750433cc="" class="list-group-item" style="text-align: left; border: 0px; padding: 0.25vw 0px 0.25vw 0vw;">
+            <div data-v-750433cc=""${extraItemAttrs} style="text-align: left; border: 0px; padding: 0.25vw 0px 0.25vw 0vw;">
                 <strong data-v-750433cc="">${item.date}</strong>: 
                 <span data-v-750433cc="">${content}</span>
             </div>
         `;
     }).join('');
+
+    const learnMoreButton = newsItems.length > INITIAL_NEWS_COUNT ? `
+        <div class="news-actions">
+            <button type="button" class="button small news-learn-more" onclick="this.closest('.news-card-body').querySelectorAll('.news-extra-item').forEach(function(item) { item.hidden = false; }); this.remove();">
+                Learn more
+            </button>
+        </div>
+    ` : '';
     
     const html = `
-        <div class="card-body" style="border: 0px; padding: 5px 5px 5px 5vw;">
+        <div class="card-body news-card-body" style="border: 0px; padding: 5px 5px 5px 5vw;">
             <div class="list-group">
                 ${newsItemsHTML}
             </div>
+            ${learnMoreButton}
         </div>
     `;
     

@@ -45,6 +45,8 @@ function parseMarkdown(text) {
 
 // --- Start of Ported News Logic ---
 
+const INITIAL_NEWS_COUNT = 5;
+
 function convertMarkdownLinks(text) {
     // Convert markdown links [text](url) to HTML links
     return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="color:black"><u>$1</u></a>');
@@ -73,20 +75,31 @@ async function generateNewsHtml(assetsDir) {
     const markdownContent = await fs.readFile(newsFilePath, 'utf-8');
     const newsItems = parseNewsMarkdown(markdownContent);
 
-    const newsItemsHTML = newsItems.map(item => {
+    const newsItemsHTML = newsItems.map((item, index) => {
+        const extraItemAttrs = index >= INITIAL_NEWS_COUNT ? ' class="list-group-item news-extra-item" hidden' : ' class="list-group-item"';
+
         return `
-            <div data-v-750433cc="" class="list-group-item" style="text-align: left; border: 0px; padding: 0.25vw 0px 0.25vw 0vw;">
+            <div data-v-750433cc=""${extraItemAttrs} style="text-align: left; border: 0px; padding: 0.25vw 0px 0.25vw 0vw;">
                 <strong data-v-750433cc="">${item.date}</strong>: 
                 <span data-v-750433cc="">${item.content}</span>
             </div>
         `;
     }).join('');
 
+    const learnMoreButton = newsItems.length > INITIAL_NEWS_COUNT ? `
+        <div class="news-actions">
+            <button type="button" class="button small news-learn-more" onclick="this.closest('.news-card-body').querySelectorAll('.news-extra-item').forEach(function(item) { item.hidden = false; }); this.remove();">
+                Learn more
+            </button>
+        </div>
+    ` : '';
+
     const newsHtml = `
-        <div class="card-body" style="border: 0px; padding: 5px 5px 5px 5vw;">
+        <div class="card-body news-card-body" style="border: 0px; padding: 5px 5px 5px 5vw;">
             <div class="list-group">
                 ${newsItemsHTML}
             </div>
+            ${learnMoreButton}
         </div>
     `;
     
